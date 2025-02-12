@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import time
 import random
 from selenium import webdriver
@@ -10,6 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 app = Flask(__name__)
+CORS(app)  # 🔥 Esto permite solicitudes desde cualquier origen
 
 def hacer_pregunta(pregunta):
     """Envia una pregunta a Copilot y obtiene la respuesta completa."""
